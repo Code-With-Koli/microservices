@@ -26,6 +26,7 @@ app.post("/posts/:id/comments", (req, res) => {
 
 
 
-//app listening on port 4000
-const PORT = process.env.PORT || 4001
+//app listening on port
+
+const PORT = process.env.PORT || 8001
 app.listen(PORT, () => console.log(`listening on port ${PORT}`))

@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'
+import * as api from "../../../api"
 
 const Comments = ({ postId }) => {
   const [comments, setComments] = useState([])
 
   const getComments = async (postId) => {
-    const res = await axios.get(`http://localhost:4001/posts/${postId}/comments`)
-    // console.log("comments:", res.data);
-    setComments(res.data);
+    try {
+      const res = await api.fetchComments(postId)
+      console.log("comments:", res.data);
+      setComments(res.data);
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   useEffect(() => {

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import axios from 'axios'
+import * as api from "../../../api"
 
 const CreateComment = ({ postId }) => {
   const [content, setContent] = useState('')
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      await axios.post(`http://localhost:4001/posts/${postId}/comments`, { content });
+      await api.createComment(postId, content)
+
     } catch (error) {
       console.log(error)
     }

@@ -27,5 +27,5 @@ app.post("/posts", (req, res) => {
 
 
 //app listening on port 4000
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 8000
 app.listen(PORT, () => console.log(`listening on port ${PORT}`))
